@@ -1,0 +1,5 @@
+pinecone-client
+openai 
+tiktoken
+langchain
+flask
