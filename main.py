@@ -11,7 +11,7 @@ load_dotenv()
 INDEX_NAME = 'langchain1'
 app = Flask(__name__)
 
-@app.route('/hello', methods=['POST'])
+@app.route('/query', methods=['POST'])
 def hello_world():
     data = request.json
     print(type(data))
