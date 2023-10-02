@@ -60,6 +60,15 @@ Now, the "diabetes-chatbot" should be up and running on your local environment.
 - Generative AI for answering type 1 diabetes-related questions.
 - Backend server built with Flask for user interaction.
 
+
+  POST /query
+  ```json
+  {"query": "query"}
+
+  {"result": "resilt"}
+  ```
+  
+
 ## Contributing
 
 Contributions to the project are welcome. However, contributors cannot claim sole ownership of the project.
