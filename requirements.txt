@@ -4,3 +4,8 @@ tiktoken
 langchain
 flask
 python-dotenv
+psycopg2
+django
+djangorestframework
+markdown
+django-filter
