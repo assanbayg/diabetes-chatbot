@@ -3,7 +3,7 @@ from .models import Meal, NutritionHistory
 
 
 class MealSerializer(serializers.ModelSerializer):
-    id = serializers.ReadOnlyField()
+    id = serializers.ReadOnlyField()    
 
     class Meta:
         model = Meal
