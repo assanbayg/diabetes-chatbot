@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "blood_level",
     "rest_framework",
+    "blood_level",
+    "meals",
 ]
 
 MIDDLEWARE = [
