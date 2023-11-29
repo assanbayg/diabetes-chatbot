@@ -68,6 +68,64 @@ The "diabetes-chatbot" project exposes the following API endpoints for interacti
     "level": 5.2
   }
 
+  `
+
+### 2. `"entries/<int:pk>/"`
+
+- **Method:** GET
+- **Description:** Receive specific entry from the database
+
+- **Method:** PUT
+- **Description:** Add a new entry to the database
+- **Request Format:**
+  ```json
+  {
+    "level": 3.2
+  }
+
+  `
+- **Method:** DELETE
+- **Description:** Delete the entry from the database
+
+### 3. `/meals/meals`
+
+- **Method:** GET
+- **Description:** Receive  all meals from the database
+
+- **Method:** POST
+- **Description:** Add a new meal to the database
+- **Request Format:**
+  ```json
+  {
+    "name": "meal_name",
+    "portion_size": 144,
+    "kcal" : 1,
+    "carbs" : 1,
+    "proteins": 1,
+    "fats": 1,
+  }
+  `
+
+### 4. `/meals/nutirion_history`
+
+- **Method:** GET
+- **Description:** Receive  all meals from the database
+
+- **Method:** POST
+- **Description:** Add a new meal to the database
+- **Request Format:**
+  ```json
+  {
+    "name": "meal_name",
+    "portion_size": 144,
+    "kcal" : 1,
+    "carbs" : 1,
+    "proteins": 1,
+    "fats": 1,
+  }
+  `
+  
+
 ## Future Improvements
 
 In the future, I plan to make the following improvements to the "diabetes-chatbot" project:
