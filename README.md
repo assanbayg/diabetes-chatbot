@@ -51,6 +51,23 @@ Now, the "diabetes-chatbot" should be up and running on your local environment.
 - Backend server built with Django for user interaction.
 - I am too lazy to write it right now.
 
+## API Endpoints
+
+The "diabetes-chatbot" project exposes the following API endpoints for interaction:
+
+### 1. `/blood_level/entries`
+
+- **Method:** GET
+- **Description:** Receive  all entries from the database
+
+- **Method:** POST
+- **Description:** Add a new entry to the database
+- **Request Format:**
+  ```json
+  {
+    "level": 5.2
+  }
+
 ## Future Improvements
 
 In the future, I plan to make the following improvements to the "diabetes-chatbot" project:
