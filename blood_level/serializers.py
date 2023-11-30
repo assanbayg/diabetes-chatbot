@@ -4,12 +4,12 @@ from .models import BloodLevelEntry
 
 class BloodLevelEntrySerializer(serializers.ModelSerializer):
     id = serializers.ReadOnlyField()
-    timestamp = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S")
+    timestamp = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S", required=False)
     formatted_date = serializers.SerializerMethodField()
 
     class Meta:
         model = BloodLevelEntry
-        fields = ["id", "level", "timestamp", "formatted_date"]
+        fields = ["id", "level", "timestamp", "formatted_date", "user"]
 
     def get_formatted_date(self, obj):
         return obj.timestamp.strftime("%A, %d %B %Y %I:%M%p")

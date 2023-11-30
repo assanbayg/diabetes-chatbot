@@ -6,7 +6,6 @@ class CustomUser(AbstractUser):
     GENDER_CHOICES = [
         ("M", "Male"),
         ("F", "Female"),
-        ("O", "Other"),
     ]
 
     date_of_birth = models.DateField(null=True, blank=True)
