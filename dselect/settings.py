@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "users",
     "blood_level",
     "meals",
     "insulin",
@@ -76,6 +77,9 @@ WSGI_APPLICATION = "dselect.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+
+
+AUTH_USER_MODEL = "users.CustomUser"
 
 DATABASES = {
     "default": {
