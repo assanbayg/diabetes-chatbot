@@ -19,4 +19,5 @@ class InsulinTakeSerializer(serializers.Serializer):
             "units",
             "insulin_type",
             "timestamp",
+            "user",
         ]

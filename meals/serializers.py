@@ -3,7 +3,7 @@ from .models import Meal, NutritionHistory
 
 
 class MealSerializer(serializers.ModelSerializer):
-    id = serializers.ReadOnlyField()    
+    id = serializers.ReadOnlyField()
 
     class Meta:
         model = Meal
@@ -15,10 +15,18 @@ class MealSerializer(serializers.ModelSerializer):
             "carbs",
             "proteins",
             "fats",
+            "user",
         ]
 
 
 class NutritionHistorySerializer(serializers.ModelSerializer):
     class Meta:
         model = NutritionHistory
-        fields = ["id", "meal", "date", "blood_sugar_before", "blood_sugar_after"]
+        fields = [
+            "id",
+            "meal",
+            "date",
+            "blood_sugar_before",
+            "blood_sugar_after",
+            "user",
+        ]
