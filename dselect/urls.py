@@ -21,4 +21,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("blood_level/", include("blood_level.urls")),
     path("meals/", include("meals.urls")),
+    path("insulin/", include("insulin.urls")),
 ]
