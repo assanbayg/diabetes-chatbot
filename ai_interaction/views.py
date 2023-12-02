@@ -32,11 +32,17 @@ def send_question(request):
     return Response({"chat": serializer.data}, status=status.HTTP_201_CREATED)
 
 
-@api_view(["GET"])
-def chat_list(request):
-    user_id = request.query_params.get("user")
-    user = CustomUser.objects.get(id=user_id)
+from django.http import Http404
 
+
+@api_view(["GET"])
+def chat_list(request, pk):
+    user_id = pk
+    try:
+        user = CustomUser.objects.get(id=user_id)
+    except CustomUser.DoesNotExist:
+        raise Http404("CustomUser matching query does not exist")
     chats = Chat.objects.filter(user=user)
     serializer = ChatSerializer(chats, many=True)
+
     return Response(serializer.data)
