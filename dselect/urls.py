@@ -23,4 +23,5 @@ urlpatterns = [
     path("meals/", include("meals.urls")),
     path("insulin/", include("insulin.urls")),
     path("users/", include("users.urls")),
+    path("ai/", include("ai_interaction.urls")),
 ]

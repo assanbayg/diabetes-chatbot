@@ -13,6 +13,9 @@ pinecone-client = "*"
 openai = "*"
 langchain = "*"
 python-dotenv = "*"
+django-environ = "*"
+google-search-results = "*"
+tiktoken = "*"
 
 [dev-packages]
 

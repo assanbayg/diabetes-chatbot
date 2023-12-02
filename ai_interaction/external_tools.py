@@ -30,7 +30,6 @@ vectorstore = Pinecone(
     "text",
 )
 
-
 llm = ChatOpenAI(
     openai_api_key=openai_api_key,
     model_name="gpt-3.5-turbo",
@@ -42,7 +41,6 @@ conversational_memory = ConversationBufferWindowMemory(
     k=3,
     return_messages=True,
 )
-
 
 qa = RetrievalQA.from_chain_type(
     llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever()
@@ -59,11 +57,12 @@ tools = [
             "more information about the topic"
         ),
     ),
-    Tool(
-        name="Google Scholar",
-        func=google_scholar.run,
-        description="Search Google Scholar for research papers and summarise the research in first five papers highlighting the papers.",
-    ),
+    # Only 100 free requests 😞
+    # Tool(
+    #     name="Google Scholar",
+    #     func=google_scholar.run,
+    #     description="Search Google Scholar for research papers and summarise the research in the first five papers highlighting the papers.",
+    # ),
 ]
 
 agent = initialize_agent(
@@ -76,7 +75,6 @@ agent = initialize_agent(
     memory=conversational_memory,
 )
 
-# Usage example
-query = "What should I do when my blood sugar is high even I did't eat anything"
-response = agent(query)["output"]
-print("Agent Response:", response)
+
+def generate_response(query):
+    return agent(query)["output"]
