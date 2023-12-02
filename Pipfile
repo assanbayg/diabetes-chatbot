@@ -9,6 +9,10 @@ djangorestframework = "*"
 psycopg2 = "*"
 markdown = "*"
 django-filter = "*"
+pinecone-client = "*"
+openai = "*"
+langchain = "*"
+python-dotenv = "*"
 
 [dev-packages]
 

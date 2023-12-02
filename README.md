@@ -8,7 +8,8 @@ DSelect is an AI-powered chatbot designed to generate responses to diabetes mell
 
 1. [Installation](#installation)
 2. [Features](#features)
-3. [Future Improvements](#future-improvements)
+3. [API Endpoints](#api-endpoints)
+4. [Future Improvements](#future-improvements)
 
 ## Installation
 
@@ -32,16 +33,15 @@ To set up the "diabetes-chatbot" project, follow these steps:
   pipenv shell
   ```
 
-5. Install the project dependencies from the requirements.txt file:
-  ```
-  pipenv install -r requirements.txt
-  ```
-
-6. Start the Django backend:
+5. Start the Django backend:
   ```
   python manage.py runserver
   ```
 
+Dont' forget to set up following env variables:
+  - OPENAI_API_KEY
+  - PINECONE_API_KEY
+  - PINECONE_API_ENV
 
 Now, the "diabetes-chatbot" should be up and running on your local environment.
 
@@ -58,5 +58,3 @@ Now, the "diabetes-chatbot" should be up and running on your local environment.
 In the future, I plan to make the following improvements to the "diabetes-chatbot" project:
 
 - Enhance the quality and accuracy of answers.
-- Completely migrate from Firebase to Django with PostgreSQL
-- Write better README

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "blood_level",
     "meals",
     "insulin",
+    "ai_interaction",
 ]
 
 MIDDLEWARE = [
