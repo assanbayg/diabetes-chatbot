@@ -1,3 +1,4 @@
+from typing import Optional
 from django.db import models
 from users.models import CustomUser
 
@@ -7,3 +8,4 @@ class Chat(models.Model):
     question_text = models.TextField()
     answer_text = models.TextField(default="")
     timestamp = models.DateTimeField(auto_now_add=True)
+    content: Optional[str]
