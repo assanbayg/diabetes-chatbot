@@ -16,6 +16,8 @@ python-dotenv = "*"
 django-environ = "*"
 google-search-results = "*"
 tiktoken = "*"
+dj-database-url = "*"
+gunicorn = "*"
 
 [dev-packages]
 

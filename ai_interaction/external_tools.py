@@ -10,6 +10,8 @@ from langchain.agents import Tool, initialize_agent
 from langchain.tools.google_scholar import GoogleScholarQueryRun
 from langchain.utilities.google_scholar import GoogleScholarAPIWrapper
 
+
+# Load and initialize environment variables
 load_dotenv()
 
 openai_api_key = os.getenv("OPENAI_API_KEY")
@@ -20,6 +22,7 @@ serp_api_key = os.getenv("SERP_API_KEY")
 model_name = "text-embedding-ada-002"
 index_name = "dselect"
 
+# Initialize vector database
 pinecone.init(api_key=pinecone_api_key, environment=pinecone_api_env)
 
 embeddings = OpenAIEmbeddings(model=model_name, openai_api_key=openai_api_key)
@@ -30,6 +33,7 @@ vectorstore = Pinecone(
     "text",
 )
 
+# Initialize llm
 llm = ChatOpenAI(
     openai_api_key=openai_api_key,
     model_name="gpt-3.5-turbo",
@@ -48,6 +52,7 @@ qa = RetrievalQA.from_chain_type(
 
 google_scholar = GoogleScholarQueryRun(api_wrapper=GoogleScholarAPIWrapper())
 
+# Define tools
 tools = [
     Tool(
         name="Knowledge Base",
@@ -58,13 +63,14 @@ tools = [
         ),
     ),
     # Only 100 free requests 😞
-    # Tool(
-    #     name="Google Scholar",
-    #     func=google_scholar.run,
-    #     description="Search Google Scholar for research papers and summarise the research in the first five papers highlighting the papers.",
-    # ),
+    Tool(
+        name="Google Scholar",
+        func=google_scholar.run,
+        description="Search Google Scholar for research papers and summarise the research in the first five papers highlighting the papers.",
+    ),
 ]
 
+# Initialize agent
 agent = initialize_agent(
     agent="chat-conversational-react-description",
     tools=tools,
