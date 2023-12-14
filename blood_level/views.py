@@ -1,15 +1,20 @@
 from django.shortcuts import get_object_or_404
 from rest_framework import status
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from .models import BloodLevelEntry
 from .serializers import BloodLevelEntrySerializer
 
 
 @api_view(["GET", "POST"])
+@permission_classes([IsAuthenticated])
 def blood_level_list(request):
     # List all blood levels entries in db
     if request.method == "GET":
+        print(request.user)
+        print("hmm")
+        print(request.auth)
         entries = BloodLevelEntry.objects.all()
         serializer = BloodLevelEntrySerializer(entries, many=True)
         return Response(serializer.data)
@@ -24,6 +29,7 @@ def blood_level_list(request):
 
 
 @api_view(["GET", "PUT", "DELETE"])
+@permission_classes([IsAuthenticated])
 def blood_level_detail(request, pk):
     # Retrieve, update, or delete a blood level entry
 
