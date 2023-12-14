@@ -21,3 +21,6 @@ class InsulinTakeSerializer(serializers.Serializer):
             "timestamp",
             "user",
         ]
+
+    def create(self, validated_data):
+        return InsulinTake.objects.create(**validated_data)
