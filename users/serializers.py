@@ -17,6 +17,7 @@ class CustomUserSerializer(serializers.ModelSerializer):
             "gender",
             "password",
         ]
+        read_only_fields = fields
 
     def create(self, validated_data):
         user = CustomUser.objects.create_user(**validated_data)
