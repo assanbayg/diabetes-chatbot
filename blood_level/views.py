@@ -21,6 +21,8 @@ def blood_level_list(request):
 
     # Create a new blood level entry
     elif request.method == "POST":
+        print("REQUEST_DATA")
+        print(request.data)
         serializer = BloodLevelEntrySerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -29,7 +31,7 @@ def blood_level_list(request):
 
 
 @api_view(["GET", "PUT", "DELETE"])
-# @permission_classes([IsAuthenticated])    
+# @permission_classes([IsAuthenticated])
 def blood_level_detail(request, pk):
     # Retrieve, update, or delete a blood level entry
 
