@@ -83,4 +83,10 @@ agent = initialize_agent(
 
 
 def generate_response(query):
-    return agent(query)["output"]
+    try:
+        response = agent(query)["output"]
+        if response is None:
+            response = "Sorry, try again!"
+    except Exception as e:
+        response = f"An error occurred: {str(e)}"
+    return response

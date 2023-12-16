@@ -29,7 +29,7 @@ def blood_level_list(request):
 
 
 @api_view(["GET", "PUT", "DELETE"])
-# @permission_classes([IsAuthenticated])
+# @permission_classes([IsAuthenticated])    
 def blood_level_detail(request, pk):
     # Retrieve, update, or delete a blood level entry
 
