@@ -9,7 +9,7 @@ class InsulinTypeSerializer(serializers.ModelSerializer):
         read_only_fields = fields
 
 
-class InsulinTakeSerializer(serializers.Serializer):
+class InsulinTakeSerializer(serializers.ModelSerializer):
     id = serializers.ReadOnlyField()
 
     class Meta:
